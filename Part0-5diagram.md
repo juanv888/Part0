@@ -26,7 +26,7 @@ sequenceDiagram
     browser->>server: HTTP GET (200) /exampleapp/spa.js
     server-->>browser: spa.js
 
-    browser->>server: Realiza solicitudes AJAX para cargar datos adicionales (JSON)
+    browser->>server: Realiza las suficientes y necesarias solitudes AJAX (JSON)
     server-->>browser: Respuesta JSON 
     server-->>browser: [{ "content": "Yikes, I did it again", "date": "2024-06-16T15:46:47.698Z" }]
     browser-->>server: Realiza más solicitudes AJAX según sea necesario

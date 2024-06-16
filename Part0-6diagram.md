@@ -25,7 +25,7 @@ sequenceDiagram
     browser->>server: Realiza solicitudes AJAX para cargar datos adicionales (JSON)
     server-->>browser: Respuesta JSON 
     server-->>browser: [{ "content": "Yikes, I did it again", "date": "2024-06-16T15:46:47.698Z" }]
-    browser-->>server: Realiza más solicitudes AJAX según sea necesario
+    browser-->>server: Realiza las suficientes y necesarias solitudes AJAX (JSON)
     server-->>browser: Respuestas JSON adicionales
     browser-->>user: Renderiza la aplicación de una sola página (SPA) en el navegador
 
