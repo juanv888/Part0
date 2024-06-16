@@ -1,4 +1,4 @@
-# Diagrama para crear una nueva nota 
+# Nueva nota en diagrama de aplicación de una sola pagina
 
 ```mermaid
 sequenceDiagram
@@ -6,13 +6,9 @@ sequenceDiagram
     participant browser as Navegador
     participant server as Servidor
 
-    Note over user, browser: El usuarios accede a la SPA de la aplicacion de notas
-
-    user->>browser: Navega a https://studies.cs.helsinki.fi/exampleapp/spa
+    user->>browser: Debes acceder a https://studies.cs.helsinki.fi/exampleapp/spa
     browser->>server: HTTP GET (200) /exampleapp/spa
-    activate server
-    server-->>browser: Documento HTML
-    deactivate server
+    server-->>browser: HTML: Aplicacion de una sola pagina (SPA)
 
     Note over browser: El navegador carga el HTML y solicita todo recusrso adicional (CSS, JavaScript)
 
@@ -32,3 +28,9 @@ sequenceDiagram
     browser-->>server: Realiza más solicitudes AJAX según sea necesario
     server-->>browser: Respuestas JSON adicionales
     browser-->>user: Renderiza la aplicación de una sola página (SPA) en el navegador
+
+    Note over user, browser: El usuario crea la nueva nota
+    
+    user->>browser: El usuario hace click en "Save"
+    browser->>server: HTTP POST (302) exampleapp/new_note con contenido de la nota
+    server-->>browser: Respuesta HTTP (Exitosa)
